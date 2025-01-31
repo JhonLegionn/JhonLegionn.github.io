@@ -69,7 +69,7 @@
             text-transform: uppercase;
             text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff007f, 0 0 20px #ff007f;
             position: absolute;
-            top: 10%; /* Ajustamos para que esté más arriba del centro */
+            top: 10%;
             left: 50%;
             transform: translateX(-50%) scale(0.8);
             text-align: center;
@@ -93,7 +93,6 @@
         .button:active {
             transform: scale(0.98);
         }
-        /* Estilo para la imagen que aparecerá cuando se presione "Sí" */
         #yesImage {
             display: none;
             margin-top: 20px;
@@ -114,39 +113,28 @@
     </style>
 </head>
 <body>
-    <!-- Agregamos la etiqueta de audio con loop -->
     <audio id="backgroundMusic" loop>
         <source src="PatadasdeAhogado.mp3" type="audio/mpeg">
         Tu navegador no soporta el elemento de audio.
     </audio>
 
-    <div class="container" id="envelopeContainer">
+    <div class="container text-center" id="envelopeContainer">
         <div class="envelope" id="envelope">
             <div class="flap" id="flap"></div>
-            <span style="color: white; font-size: 24px;">💌</span>
+            <span class="fs-1">💌</span>
         </div>
         <div class="message" id="message">
-            <h1>¿Quieres ser mi 14 de febrero? 💖</h1>
+            <h1 class="fs-3">¿Quieres ser mi 14 de febrero? 💖</h1>
         </div>
-        <!-- Los botones ahora están fuera del contenedor del sobre y debajo del mensaje -->
-        <div class="button-container" id="buttonsContainer" style="display: none;">
-            <button class="button" id="yesButton">Sí</button>
-            <button class="button" id="noButton">No</button>
+        <div class="button-container d-flex flex-column align-items-center" id="buttonsContainer" style="display: none;">
+            <button class="btn btn-danger btn-lg mb-2" id="yesButton">Sí</button>
+            <button class="btn btn-dark btn-lg" id="noButton">No</button>
         </div>
     </div>
 
-    <!-- Imagen que se mostrará cuando se haga clic en "Sí" -->
-    <img src="tamo.webp" id="yesImage" alt="Quiero que seas mi 14 de febrero" />
-
-    <!-- Mensaje adicional que aparecerá al hacer clic en "Sí" -->
-    <div id="loveMessage">
-        <p>Gracias por llegar a mi vida.<br>
-        Nunca imagine ni un poquito sentir todo lo que siento por ti, quiero estar contigo el resto de mi vida.<br>
-        Te entrego todo mi amor y mi corazón.<br>
-        Estar contigo es como un sueño, un sueño del que no quiero despertar jamás. Contigo me siento tranquilo, y muy feliz, amo tus ojitos, amo tu sonrisa, amo agarrar tu mano, amo tu carita de enojada, amo cuando me abrazas, amo cuando estamos juntos y solo nos miramos, amo cuando me besas en el cachete y me haces sentir la persona más amada del mundo, solo amo todo de ti.<br>
-        No se si estoy logrando hacerte sentir amada, pero estoy tratando de mostrarte todo el amor que siento por ti y todo lo que me haces sentir.<br>
-        Desde que llegaste a mi vida solo me hiciste feliz, gracias por ese primer baile y por esa primera cita.<br>
-        (Según mi criterio yo te amo más)</p>
+    <img src="tamo.webp" class="img-fluid" id="yesImage" alt="Quiero que seas mi 14 de febrero" />
+    <div id="loveMessage" class="container">
+        <p>Gracias por llegar a mi vida...<br>(Según mi criterio yo te amo más)</p>
     </div>
 
     <script>
@@ -155,31 +143,29 @@
                 $('#flap').css('transform', 'rotateX(180deg)');
                 $('#envelope').fadeOut(500, function() {
                     $('#message').css({ opacity: 1, transform: 'translate(-50%, -50%) scale(1)' }).fadeIn();
-                    $('#buttonsContainer').fadeIn(); // Mostrar los botones después de abrir el sobre
+                    $('#buttonsContainer').fadeIn();
                 });
             });
 
             $('#yesButton').click(function() {
-                // Reproducir la música después de hacer clic en "Sí"
                 document.getElementById('backgroundMusic').play();
-
-                // Cambiar el encabezado y mostrar la imagen
-                $('#message h1').text('Quiero que seas mi 14 de febrero y mis 365 días del año, mi amor'); // Cambiar el mensaje
-                $('#message').css({ fontSize: '24px' }); // Restaurar el tamaño de la fuente
-                $(this).hide(); // Ocultar el botón "Sí" después de hacer clic
-                $('#noButton').hide(); // Ocultar el botón "No" después de hacer clic
-                $('#loveMessage').fadeIn(); // Mostrar el mensaje de amor
-                $('#yesImage').fadeIn(); // Mostrar la imagen
+                $('#message h1').text('Quiero que seas mi 14 de febrero y mis 365 días del año, mi amor');
+                $('#message').css({ fontSize: '24px' });
+                $(this).hide();
+                $('#noButton').hide();
+                $('#loveMessage').fadeIn();
+                $('#yesImage').fadeIn();
             });
 
             $('#noButton').click(function() {
-                $('#message h1').html('👍👍👍👍👍👍👍👍👍'); // Mostrar los 👍 al hacer clic en "No"
-                $('#message').css({ fontSize: '48px' }); // Aumentar el tamaño de la fuente para los thumbs
-                $(this).hide(); // Ocultar el botón "No" después de hacer clic
-                $('#yesButton').hide(); // Ocultar el botón "Sí" después de hacer clic
+                $('#message h1').html('👍👍👍👍👍👍👍👍👍');
+                $('#message').css({ fontSize: '48px' });
+                $(this).hide();
+                $('#yesButton').hide();
             });
         });
     </script>
 </body>
 </html>
+
 
