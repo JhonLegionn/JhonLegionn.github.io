@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te Amo</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            color: #d10068;
+        }
+        h2 {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Gracias por llegar a mi vida</h2>
+    <p>Nunca imagine ni un poquito sentir todo lo que siento por ti, quiero estar contigo el resto de mi vida.
+Te entrego todo mi amor y mi corazon.
+Estar contigo es como un sueño, un sueño del que no quiero despertar jamas. Contigo me siento tranquilo, y muy feliz, amo tus ojitos, amo tu sonrisa, amo agarrar tu mano, amo tu carita de enojada, amo cuando me abrazas, amo cuando estamos juntos y solo nos miramos, amo cuando me besas en el cachete y me haces sentir la persona mas amada del mundo, solo amo todo de ti.
+No se si estoy logrando hacerte sentir amada, pero estoy tratando de mostrarte todo el amor que siento por ti y todo lo que me haces sentir.
+Desde que llegaste a mi vida solo me hiciste feliz, gracias por ese primer baile y por esa primera cita.
+(segun mi criterio yo te amo mas)</p>
+    
+    <audio id="backgroundMusic" loop>
+        <source src="TiAmo.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    
+    <button onclick="playMusic()">Haz clic aqui mi amorcita</button>
+    
+    <script>
+        function playMusic() {
+            let audio = document.getElementById("backgroundMusic");
+            audio.play().catch(error => console.log("Error al reproducir el audio:", error));
+        }
+    </script>
+    
+    <footer>Quiero que seas mi 14 de febrero y toda mi vida</footer>
+</body>
+</html>
